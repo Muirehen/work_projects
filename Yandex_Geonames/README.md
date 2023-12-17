@@ -1,5 +1,5 @@
 # Яндекс Практикум, Карьерный центр. Сопоставление геоназваний
-Рекомендуется смотреть проект через [NBViewer](https://nbviewer.jupyter.org/github/Muirehen/work_projects/blob/master/Yandex_Geonames/Geonames_notebook.ipynb?flush_cache=true).
+<!--Рекомендуется смотреть проект через [NBViewer](https://nbviewer.jupyter.org/github/Muirehen/work_projects/blob/master/Yandex_Geonames/Geonames_notebook.ipynb?flush_cache=true). -->
 
 **Бизнес-задача:** в базе данных Карьерного Центра есть названия географических объектов с разным написанием или ошибками, например:
 - СПб
