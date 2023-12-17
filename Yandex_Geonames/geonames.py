@@ -379,4 +379,4 @@ class Matching:
             .sort_values(by='cosine', ascending=False)
 
         # вывод словарей
-        return [country.to_dict('index')]
+        return country.to_dict(orient='records')
