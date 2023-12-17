@@ -88,6 +88,32 @@ http://download.geonames.org/export/dump/
 3. (Опционально) Выбор стран, в которых планируется поиск, далее векторизация соответствующих корпусов.
 4. Поиск
 
+**Примеры работы с модулем:**
 
+Соединение с базой данных.
 
+     import geonames
+     DATABASE = {'drivername': 'postgresql',
+                 'username': 'postgres', 
+                 'password': '112358', 
+                 'host': 'localhost',
+                 'port': 5432,
+                 'database': 'postgres',
+                 'query': {}}          
+      connect = geonames.SqlConnector(DATABASE)
 
+Загрузка разреженных матриц и предобученных моделей.
+
+    ru_sparse = connect.download_sparse('ru_sparse')
+    en_sparse = connect.download_sparse('en_sparse')
+    ru_vec = connect.download_vec('ru_vector')
+    en_vec = connect.download_vec('en_vector')
+
+Поиск ближайших названий.
+
+    module = geonames.Matching(ru_sparse=ru_sparse,
+                               en_sparse=en_sparse,
+                               ru_vectorizer=ru_vec,
+                               en_vectorizer=en_vec,
+                               engine = connect.engine)
+    module.find('Владивастоук')
